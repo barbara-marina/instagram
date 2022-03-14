@@ -4,10 +4,10 @@ export default function Sugestion({userImage, userName, userState}) {
     return (
         <Container>
             <div className="user">
-                <img src={`assets/img/${userImage}`} alt={`Perfil de ${userName}`}/>
+                <img src={`assets/img/${userImage}`} alt={userName}/>
                 <div className="text">
-                <div className="name">{userName}</div>
-                <div className="state">{userState}</div>
+                    <div className="name">{userName}</div>
+                    <div className="state">{userState}</div>
                 </div>
             </div>
 

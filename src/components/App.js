@@ -3,10 +3,12 @@ import Navbar from "./Navbar";
 import Main from "./Main";
 import Footer from "./Footer";
 
+const logo = "assets/img/logo.png";
+
 export default function App() {
     return (
         <Container>
-            <Navbar/>
+            <Navbar logo={logo}/>
             <Main/>
             <Footer/>
         </Container>

@@ -1,44 +1,48 @@
 import styled from "styled-components";
 
-export default function Post({user:{userImage, userName}, post:{format, acess}, like:{likeImage,likeName, more}}) {
+export default function Post({user, post, likes}) {
+    const {userImage, userName} = user;
+    const {format, acess} = post;
+    const {likesImage, likesName, more} = likes;
+
     return (
         <Container>
             <header>
                 <div className="user">
-                    <img src={`assets/img/${userImage}`} alt={`Perfil de ${userName}.`} />
+                    <img src={`assets/img/${userImage}`} alt={userName} />
                     {userName}
                 </div>
-                <div className="actions">
+                <nav className="actions">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
-                </div>
+                </nav>
             </header>
 
-            <article>
+            <section>
                 {format==="img" 
                     ? <img src={`./assets/img/${acess}.svg`} alt="post" />
-                    : <video autoPlay loop>
+                    : <video autoPlay loop muted>
                         <source src={`./assets/video/${acess}.mp4`} type="video/mp4" />
                         <source src={`./assets/video/${acess}.ogv`} type="video/ogv" />
                       </video>
                 }
-            </article>
+            </section>
 
             <footer>
-                <div className="actions">
-                <div>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="chatbubble-outline"></ion-icon>
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                </div>
-                <div>
-                    <ion-icon name="bookmark-outline"></ion-icon>
-                </div>
-                </div>
+                <nav className="actions">
+                    <div>
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                        <ion-icon name="paper-plane-outline"></ion-icon>
+                    </div>
+                    <div>
+                        <ion-icon name="bookmark-outline"></ion-icon>
+                    </div>
+                </nav>
 
                 <div className="likes">
-                    <img src={`assets/img/${likeImage}`} alt={likeName} />
+                    <img src={`assets/img/${likesImage}`} alt={likesName} />
                     <div className="text">
-                        Curtido por <strong>{likeName}</strong> e <strong>outras {more} pessoas</strong>
+                        Curtido por <strong>{likesName}</strong> e <strong>outras {more} pessoas</strong>
                     </div>
                 </div>
             </footer>
@@ -71,25 +75,21 @@ const Container = styled.div`
             display: flex;
             justify-content: center;
             align-items: center;
-
-            cursor: pointer;
         }
         img {
             width: 32px;
             height: 32px;
             
             margin-right: 10px;
-
-            cursor: pointer;
         }
         ion-icon {
             width: 16px;
         }
     }
-    ion-icon, strong {
+    ion-icon, strong, header img, header .user, header .actions {
         cursor: pointer;
     }
-    article, article img, article video{
+    section, section img, section video{
         width:100%;
         height: auto;
     }

@@ -37,12 +37,7 @@ export default function Sugestions() {
                 <div>Ver tudo</div>
             </div>
 
-            {sugestions.map(
-                (s) => (
-                    <Sugestion userImage={s.userImage} 
-                    userName={s.userName} userState={s.userState} />
-                )
-            )}  
+            {sugestions.map((s) => (<Sugestion userImage={s.userImage} userName={s.userName} userState={s.userState}/>))}  
         </Container>
     );
 }

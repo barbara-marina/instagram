@@ -2,11 +2,8 @@ import styled from "styled-components";
 import Sugestions from "./Sugestions";
 import User from "./User";
 
-const {userImage, userName, userNickname} = {
-    userImage: "catanacomics.svg",
-    userName: "catanacomics",
-    userNickname: "Catana"
-}
+const {userImage, userName, userNickname} = 
+      {userImage: "catanacomics.svg", userName: "catanacomics", userNickname: "Catana"};
 
 export default function Sidebar() {
     return (
@@ -14,13 +11,13 @@ export default function Sidebar() {
             <User userImage={userImage} userName={userName} userNickname={userNickname}/>
             <Sugestions/>
 
-            <div className="links">
+            <nav>
                 Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags • Idioma
-            </div>
+            </nav>
 
-            <div className="copyright">
+            <footer>
                 © 2021 INSTAGRAM DO FACEBOOK
-            </div>
+            </footer>
         </Container>
     );
 }
@@ -33,11 +30,11 @@ const Container = styled.div`
     position: sticky;
     top: 88px;
 
-    .links {
+    nav {
         margin: 40px 0 18px 0;
         cursor: pointer;
     }
-    .links, .copyright {
+    nav, footer {
         font-size: 11px;
         color: #C7C7C7;
     } 

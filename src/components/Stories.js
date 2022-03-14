@@ -1,47 +1,19 @@
 import styled from "styled-components";
 import Story from "./Story";
 
-const stories = [
-    {
-        userImage: "9gag.svg",
-        userName: "9gag"
-    },
-    {
-        userImage: "meowed.svg",
-        userName: "meowed"
-    },
-    {
-        userImage: "barked.svg",
-        userName: "barked"
-    },
-    {
-        userImage: "nathanwpylestrangeplanet.svg",
-        userName: "nathanwpylestrangeplanet"
-    },
-    {
-        userImage: "wawawicomics.svg",
-        userName: "wawawicomics"
-    },
-    {
-        userImage: "respondeai.svg",
-        userName: "respondeai"
-    },
-    {
-        userImage: "filomoderna.svg",
-        userName: "filomoderna"
-    },
-    {
-        userImage: "memeriagourmet.svg",
-        userName: "memeriagourmet"
-    }
-]
+const stories = [{userImage: "9gag.svg", userName: "9gag"},
+                 {userImage: "meowed.svg", userName: "meowed"},
+                 {userImage: "barked.svg", userName: "barked"},
+                 {userImage: "nathanwpylestrangeplanet.svg", userName: "nathanwpylestrangeplanet"},
+                 {userImage: "wawawicomics.svg", userName: "wawawicomics"},
+                 {userImage: "respondeai.svg", userName: "respondeai"},
+                 {userImage: "filomoderna.svg", userName: "filomoderna"},
+                 {userImage: "memeriagourmet.svg", userName: "memeriagourmet"}];
 
 export default function Stories() {   
     return (
         <Container>
-           {stories.map(
-                (story) => (<Story userImage={story.userImage} userName={story.userName}/>)
-            )}
+           {stories.map((story) => (<Story userImage={story.userImage} userName={story.userName}/>))}
 
            <div className="arrow">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
@@ -80,7 +52,6 @@ const Container = styled.div`
         
         cursor: pointer;
     }
-
     @media (max-width: 614px) {
         width: 100%;
         

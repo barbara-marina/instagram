@@ -1,35 +1,35 @@
 import styled from "styled-components";
 
-export default function Navbar() {
+export default function Navbar({logo}) {
     return (
         <Container>
-            <div className="contents">
+            <section>
                 <div className="logo">
                     <ion-icon name="logo-instagram"></ion-icon>
                     <div className="bar"></div>
-                    <img src="assets/img/logo.png" alt="logo"/>
+                    <img src={logo} alt="logo"/>
                 </div>
+        
+                <input className="search-bar" type="text" placeholder="Pesquisar" />
+        
+                <nav className="icons">
+                    <ion-icon name="paper-plane-outline"></ion-icon>
+                    <ion-icon name="compass-outline"></ion-icon>
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <ion-icon name="person-outline"></ion-icon>
+                </nav>
 
                 <div className="logo-mobile">            
                     <ion-icon name="logo-instagram"></ion-icon>
                 </div>
 
-                <img className="instagram-mobile" src="assets/img/logo.png" alt="logo" />
-        
-                <input className="search-bar" type="text" placeholder="Pesquisar" />
-        
-                <div className="icons">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                    <ion-icon name="compass-outline"></ion-icon>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="person-outline"></ion-icon>
-                </div>
+                <img className="instagram-mobile" src={logo} alt="logo" />
 
-                <div className="icon-mobile">            
+                <nav className="icons-mobile">            
                     <ion-icon name="paper-plane-outline"></ion-icon>
-                </div>
+                </nav>
                 
-            </div>
+            </section>
         </Container>
     );
 }
@@ -57,7 +57,7 @@ const Container = styled.div`
         position: relative;
         top: 3px;
     }
-    .contents {
+    section {
         width: 100%;
         max-width: 935px;
         height: 100%;
@@ -75,7 +75,7 @@ const Container = styled.div`
         .icons {
             gap: 10px
         }
-        .logo-mobile, .instagram-mobile, .icon-mobile {
+        .logo-mobile, .instagram-mobile, .icons-mobile {
             display: none;
         }
         .bar {
@@ -100,13 +100,13 @@ const Container = styled.div`
         }
     }
     @media (max-width: 935px) {
-        .contents  {
+        section  {
             padding: 0 20px;
         }
     }
     @media (max-width: 614px) {
-        .contents {
-            .logo-mobile, .instagram-mobile, .icon-mobile {
+        section {
+            .logo-mobile, .instagram-mobile, .icons-mobile {
                 display: flex;
             }
             .instagram-mobile {
